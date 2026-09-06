@@ -2,13 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HashDrop — Redirecting</title>
+  <!-- Mobile -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!-- Basic SEO -->
+  <title>HashDrop — Temporary File Uploader</title>
 
   <meta
-    http-equiv="refresh"
-    content="2;url=https://hashdrop.hailongcoding-hashdrop.workers.dev/"
+    name="description"
+    content="A free, no-login temporary file uploader and ChatGPT file bridge."
+  >
+
+  <meta
+    name="theme-color"
+    content="#151515"
+  >
+
+  <!-- Canonical -->
+  <link
+    rel="canonical"
+    href="https://hashdrop.github.io/"
+  >
+
+  <!-- ========================= -->
+  <!-- Open Graph / Social Cards -->
+  <!-- ========================= -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="HashDrop — Temporary File Uploader"
+  >
+
+  <meta
+    property="og:description"
+    content="A free, no-login temporary file uploader and ChatGPT file bridge."
+  >
+
+  <meta
+    property="og:url"
+    content="https://hashdrop.github.io/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="HashDrop"
+  >
+
+  <!-- PUT YOUR 1280x640 BANNER URL HERE -->
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_banner.png"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1280"
+  >
+
+  <meta
+    property="og:image:height"
+    content="640"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="HashDrop — Temporary File Uploader"
+  >
+
+  <!-- ========================= -->
+  <!-- Twitter / X Card -->
+  <!-- ========================= -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="HashDrop — Temporary File Uploader"
+  >
+
+  <meta
+    name="twitter:description"
+    content="A free, no-login temporary file uploader and ChatGPT file bridge."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_banner.png"
+  >
+
+  <meta
+    name="twitter:image:alt"
+    content="HashDrop — Temporary File Uploader"
   >
 
   <style>
@@ -19,14 +115,16 @@
     html,
     body {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       margin: 0;
     }
 
     body {
+      min-height: 100vh;
+
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       background: #151515;
       color: #ffffff;
@@ -40,116 +138,192 @@
         Helvetica,
         Arial,
         sans-serif;
+
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
       width: 100%;
-      max-width: 700px;
+      max-width: 760px;
+
       padding: 40px 24px;
+
       text-align: center;
     }
 
-    /* Logo */
-    .logo {
-      width: 170px;
-      height: auto;
-      display: block;
-      margin: 0 auto 55px;
+    /* =========================
+       Logo
+       ========================= */
 
-      object-fit: contain;
+    .logo-link {
+      display: inline-block;
+
+      text-decoration: none;
+
+      margin-bottom: 48px;
     }
 
-    /* Heading */
-    h1 {
-      margin: 0 0 22px;
+    .logo {
+      width: 150px;
+      height: 150px;
 
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.1;
-      font-weight: 700;
-      letter-spacing: -1.5px;
+      display: block;
+
+      object-fit: contain;
+
+      border-radius: 24px;
+
+      transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .logo-link:hover .logo {
+      transform: translateY(-3px);
+      opacity: 0.92;
+    }
+
+    /* =========================
+       Heading
+       ========================= */
+
+    h1 {
+      margin: 0 0 20px;
+
+      font-size: clamp(34px, 6vw, 58px);
+
+      line-height: 1.08;
+
+      font-weight: 750;
+
+      letter-spacing: -2px;
     }
 
     h1 span {
       color: #1464ff;
     }
 
-    /* Description */
+    /* =========================
+       Description
+       ========================= */
+
     .description {
+      max-width: 620px;
+
       margin: 0 auto 38px;
 
       color: #a9a9a9;
 
       font-size: 18px;
+
       line-height: 1.6;
     }
 
-    /* Button */
+    /* =========================
+       Button
+       ========================= */
+
     .button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       gap: 12px;
 
       min-width: 280px;
+
       padding: 17px 30px;
 
       background: #1464ff;
+
       color: #ffffff;
 
       border-radius: 13px;
 
-      font-size: 18px;
-      font-weight: 600;
-
       text-decoration: none;
+
+      font-size: 18px;
+
+      font-weight: 650;
+
+      box-shadow:
+        0 8px 30px rgba(20, 100, 255, 0.22);
 
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background 0.2s ease;
-
-      box-shadow: 0 8px 30px rgba(20, 100, 255, 0.22);
     }
 
     .button:hover {
       background: #0d5bf0;
+
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(20, 100, 255, 0.32);
+
+      box-shadow:
+        0 12px 38px rgba(20, 100, 255, 0.32);
     }
 
     .button:active {
       transform: translateY(0);
     }
 
-    /* External link icon */
+    /* =========================
+       External Link Icon
+       ========================= */
+
     .icon {
       width: 21px;
       height: 21px;
-      stroke: currentColor;
+
       fill: none;
+
+      stroke: currentColor;
+
       stroke-width: 2;
+
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    /* Countdown */
-    .countdown {
-      margin-top: 34px;
+    /* =========================
+       Countdown
+       ========================= */
 
-      color: #777777;
+    .countdown {
+      margin-top: 32px;
+
+      color: #707070;
 
       font-size: 15px;
     }
 
-    /* Mobile */
+    /* =========================
+       Mobile
+       ========================= */
+
     @media (max-width: 600px) {
+
+      .container {
+        padding: 32px 20px;
+      }
+
       .logo {
-        width: 125px;
-        margin-bottom: 42px;
+        width: 115px;
+        height: 115px;
+
+        border-radius: 18px;
+      }
+
+      .logo-link {
+        margin-bottom: 38px;
       }
 
       h1 {
-        font-size: 34px;
+        font-size: 36px;
+
+        letter-spacing: -1.2px;
       }
 
       .description {
@@ -158,6 +332,7 @@
 
       .button {
         width: 100%;
+
         min-width: 0;
       }
     }
@@ -169,7 +344,11 @@
   <main class="container">
 
     <!-- HashDrop Logo -->
-    <a href="https://hashdrop.hailongcoding-hashdrop.workers.dev/">
+    <a
+      class="logo-link"
+      href="https://hashdrop.hailongcoding-hashdrop.workers.dev/"
+      aria-label="Go to HashDrop"
+    >
       <img
         class="logo"
         src="https://avatars.githubusercontent.com/u/325260491?v=4"
@@ -177,21 +356,25 @@
       >
     </a>
 
-    <!-- Heading -->
+
+    <!-- Main Heading -->
     <h1>
       Redirecting to <span>HashDrop</span>
     </h1>
+
 
     <!-- Description -->
     <p class="description">
       You are being redirected to the HashDrop environment.
     </p>
 
-    <!-- Manual redirect -->
+
+    <!-- Manual Redirect -->
     <a
       class="button"
       href="https://hashdrop.hailongcoding-hashdrop.workers.dev/"
     >
+
       <svg
         class="icon"
         viewBox="0 0 24 24"
@@ -203,29 +386,47 @@
       </svg>
 
       Go to HashDrop
+
     </a>
+
 
     <!-- Countdown -->
     <div class="countdown">
-      Redirecting in <span id="seconds">2</span> seconds...
+      Redirecting in
+      <span id="seconds">2</span>
+      seconds...
     </div>
 
   </main>
 
+
   <script>
+    const redirectURL =
+      "https://hashdrop.hailongcoding-hashdrop.workers.dev/";
+
     let seconds = 2;
 
-    const countdown = document.getElementById("seconds");
+    const secondsElement =
+      document.getElementById("seconds");
 
     const timer = setInterval(() => {
+
       seconds--;
 
       if (seconds <= 0) {
+
         clearInterval(timer);
-        countdown.textContent = "Redirecting...";
+
+        secondsElement.textContent = "0";
+
+        window.location.href = redirectURL;
+
       } else {
-        countdown.textContent = seconds;
+
+        secondsElement.textContent = seconds;
+
       }
+
     }, 1000);
   </script>
 
