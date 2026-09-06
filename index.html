@@ -3,29 +3,19 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Mobile -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
 
-  <!-- Basic SEO -->
-  <title>HashDrop — Temporary File Uploader</title>
-
-  <meta
-    name="description"
-    content="A free, no-login temporary file uploader and ChatGPT file bridge."
-  >
+  <title>Verifying — HashDrop</title>
 
   <meta
     name="theme-color"
     content="#151515"
   >
 
-  <!-- ========================= -->
-  <!-- Site Icon / Favicon -->
-  <!-- ========================= -->
-
+  <!-- HashDrop Icon -->
   <link
     rel="icon"
     type="image/png"
@@ -37,91 +27,6 @@
     href="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_icon.png"
   >
 
-  <!-- Canonical -->
-  <link
-    rel="canonical"
-    href="https://hashdrop.github.io/"
-  >
-
-  <!-- ========================= -->
-  <!-- Open Graph / Social Cards -->
-  <!-- ========================= -->
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="HashDrop — Temporary File Uploader"
-  >
-
-  <meta
-    property="og:description"
-    content="A free, no-login temporary file uploader and ChatGPT file bridge."
-  >
-
-  <meta
-    property="og:url"
-    content="https://hashdrop.github.io/"
-  >
-
-  <meta
-    property="og:site_name"
-    content="HashDrop"
-  >
-
-  <!-- Social preview banner -->
-  <meta
-    property="og:image"
-    content="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_banner.png"
-  >
-
-  <meta
-    property="og:image:width"
-    content="1280"
-  >
-
-  <meta
-    property="og:image:height"
-    content="640"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="HashDrop — Temporary File Uploader"
-  >
-
-  <!-- ========================= -->
-  <!-- Twitter / X Card -->
-  <!-- ========================= -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="HashDrop — Temporary File Uploader"
-  >
-
-  <meta
-    name="twitter:description"
-    content="A free, no-login temporary file uploader and ChatGPT file bridge."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_banner.png"
-  >
-
-  <meta
-    name="twitter:image:alt"
-    content="HashDrop — Temporary File Uploader"
-  >
-
   <style>
     * {
       box-sizing: border-box;
@@ -129,9 +34,9 @@
 
     html,
     body {
-      width: 100%;
-      min-height: 100%;
       margin: 0;
+      width: 100%;
+      height: 100%;
     }
 
     body {
@@ -155,199 +60,186 @@
         sans-serif;
 
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
       width: 100%;
-      max-width: 760px;
+      max-width: 520px;
 
       padding: 40px 24px;
 
       text-align: center;
     }
 
-    /* =========================
-       Logo
-       ========================= */
-
-    .logo-link {
-      display: inline-block;
-
-      text-decoration: none;
-
-      margin-bottom: 48px;
-    }
+    /* Logo */
 
     .logo {
-      width: 150px;
-      height: 150px;
-
-      display: block;
+      width: 100px;
+      height: 100px;
 
       object-fit: contain;
 
-      border-radius: 24px;
-
-      transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-    }
-
-    .logo-link:hover .logo {
-      transform: translateY(-3px);
-      opacity: 0.92;
-    }
-
-    /* =========================
-       Heading
-       ========================= */
-
-    h1 {
-      margin: 0 0 20px;
-
-      font-size: clamp(34px, 6vw, 58px);
-
-      line-height: 1.08;
-
-      font-weight: 750;
-
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      color: #1464ff;
-    }
-
-    /* =========================
-       Description
-       ========================= */
-
-    .description {
-      max-width: 620px;
+      display: block;
 
       margin: 0 auto 38px;
 
-      color: #a9a9a9;
-
-      font-size: 18px;
-
-      line-height: 1.6;
+      border-radius: 20px;
     }
 
-    /* =========================
-       Button
-       ========================= */
+    /* Heading */
 
-    .button {
-      display: inline-flex;
+    h1 {
+      margin: 0 0 12px;
+
+      font-size: 30px;
+
+      line-height: 1.2;
+
+      font-weight: 700;
+
+      letter-spacing: -0.6px;
+    }
+
+    /* Description */
+
+    .description {
+      margin: 0;
+
+      color: #8f8f8f;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+    }
+
+    /* Verification box */
+
+    .verification {
+      margin: 34px auto 0;
+
+      width: 100%;
+      max-width: 390px;
+
+      padding: 18px 20px;
+
+      display: flex;
 
       align-items: center;
-      justify-content: center;
 
-      gap: 12px;
+      gap: 15px;
 
-      min-width: 280px;
+      text-align: left;
 
-      padding: 17px 30px;
+      background: #1b1b1b;
 
-      background: #1464ff;
+      border: 1px solid #292929;
+
+      border-radius: 12px;
+    }
+
+    /* Spinner */
+
+    .spinner {
+      width: 22px;
+      height: 22px;
+
+      flex-shrink: 0;
+
+      border: 2px solid #333333;
+
+      border-top-color: #1464ff;
+
+      border-radius: 50%;
+
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .status {
+      font-size: 14px;
+
+      color: #b5b5b5;
+    }
+
+    .status strong {
+      display: block;
+
+      margin-bottom: 3px;
+
       color: #ffffff;
-
-      border-radius: 13px;
-
-      text-decoration: none;
-
-      font-size: 18px;
-      font-weight: 650;
-
-      box-shadow:
-        0 8px 30px rgba(20, 100, 255, 0.22);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .button:hover {
-      background: #0d5bf0;
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 12px 38px rgba(20, 100, 255, 0.32);
-    }
-
-    .button:active {
-      transform: translateY(0);
-    }
-
-    /* =========================
-       External Link Icon
-       ========================= */
-
-    .icon {
-      width: 21px;
-      height: 21px;
-
-      fill: none;
-
-      stroke: currentColor;
-
-      stroke-width: 2;
-
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* =========================
-       Countdown
-       ========================= */
-
-    .countdown {
-      margin-top: 32px;
-
-      color: #707070;
 
       font-size: 15px;
     }
 
-    /* =========================
-       Mobile
-       ========================= */
+    /* Progress */
+
+    .progress {
+      width: 100%;
+      max-width: 390px;
+
+      height: 3px;
+
+      margin: 20px auto 0;
+
+      overflow: hidden;
+
+      background: #242424;
+
+      border-radius: 10px;
+    }
+
+    .progress-bar {
+      width: 0%;
+
+      height: 100%;
+
+      background: #1464ff;
+
+      border-radius: 10px;
+
+      transition: width 0.5s ease;
+    }
+
+    /* Bottom text */
+
+    .redirect {
+      margin-top: 24px;
+
+      color: #606060;
+
+      font-size: 13px;
+    }
+
+    /* Mobile */
 
     @media (max-width: 600px) {
 
       .container {
-        padding: 32px 20px;
+        padding: 30px 20px;
       }
 
       .logo {
-        width: 115px;
-        height: 115px;
+        width: 82px;
+        height: 82px;
 
-        border-radius: 18px;
-      }
-
-      .logo-link {
-        margin-bottom: 38px;
+        margin-bottom: 32px;
       }
 
       h1 {
-        font-size: 36px;
-
-        letter-spacing: -1.2px;
+        font-size: 27px;
       }
 
       .description {
-        font-size: 16px;
+        font-size: 15px;
       }
 
-      .button {
-        width: 100%;
-
-        min-width: 0;
+      .verification {
+        padding: 16px;
       }
     }
   </style>
@@ -357,106 +249,180 @@
 
   <main class="container">
 
-    <!-- =========================
-         HashDrop Logo
-         ========================= -->
-
-    <a
-      class="logo-link"
-      href="https://hashdrop.hailongcoding-hashdrop.workers.dev/"
-      aria-label="Go to HashDrop"
+    <!-- HashDrop Logo -->
+    <img
+      class="logo"
+      src="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_icon.png"
+      alt="HashDrop"
     >
-      <img
-        class="logo"
-        src="https://raw.githubusercontent.com/HashDrop/HashDrop.github.io/refs/heads/main/HashDrop_icon.png"
-        alt="HashDrop"
-      >
-    </a>
 
-
-    <!-- =========================
-         Main Heading
-         ========================= -->
-
-    <h1>
-      Redirecting to <span>HashDrop</span>
+    <!-- Heading -->
+    <h1 id="title">
+      Verifying your browser
     </h1>
 
-
-    <!-- =========================
-         Description
-         ========================= -->
-
-    <p class="description">
-      You are being redirected to the HashDrop environment.
+    <p
+      class="description"
+      id="description"
+    >
+      Please wait while we prepare HashDrop.
     </p>
 
+    <!-- Verification Status -->
+    <div class="verification">
 
-    <!-- =========================
-         Manual Redirect
-         ========================= -->
+      <div
+        class="spinner"
+        id="spinner"
+      ></div>
 
-    <a
-      class="button"
-      href="https://hashdrop.hailongcoding-hashdrop.workers.dev/"
+      <div class="status">
+
+        <strong id="statusTitle">
+          Checking browser
+        </strong>
+
+        <span id="statusText">
+          Preparing your connection...
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- Progress -->
+    <div class="progress">
+
+      <div
+        class="progress-bar"
+        id="progressBar"
+      ></div>
+
+    </div>
+
+    <!-- Countdown -->
+    <div
+      class="redirect"
+      id="redirectText"
     >
-
-      <svg
-        class="icon"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M14 3h7v7"></path>
-        <path d="M10 14L21 3"></path>
-        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
-      </svg>
-
-      Go to HashDrop
-
-    </a>
-
-
-    <!-- =========================
-         Countdown
-         ========================= -->
-
-    <div class="countdown">
-      Redirecting in
-      <span id="seconds">2</span>
-      seconds...
+      Redirecting to HashDrop...
     </div>
 
   </main>
 
 
   <script>
-    const redirectURL =
+
+    const HASHDROP_URL =
       "https://hashdrop.hailongcoding-hashdrop.workers.dev/";
 
-    let seconds = 2;
+    const title =
+      document.getElementById("title");
 
-    const secondsElement =
-      document.getElementById("seconds");
+    const description =
+      document.getElementById("description");
 
-    const timer = setInterval(() => {
+    const statusTitle =
+      document.getElementById("statusTitle");
 
-      seconds--;
+    const statusText =
+      document.getElementById("statusText");
 
-      if (seconds <= 0) {
+    const spinner =
+      document.getElementById("spinner");
 
-        clearInterval(timer);
+    const progressBar =
+      document.getElementById("progressBar");
 
-        secondsElement.textContent = "0";
+    const redirectText =
+      document.getElementById("redirectText");
 
-        window.location.href = redirectURL;
 
-      } else {
+    /*
+     * Lightweight browser check.
+     *
+     * This checks that JavaScript is running and
+     * that the browser has a normal document environment.
+     */
 
-        secondsElement.textContent = seconds;
+    const browserReady =
+      typeof window !== "undefined" &&
+      typeof document !== "undefined";
 
-      }
 
-    }, 1000);
+    if (!browserReady) {
+
+      statusTitle.textContent =
+        "Browser check failed";
+
+      statusText.textContent =
+        "Please enable JavaScript.";
+
+    } else {
+
+      /* Step 1 */
+
+      setTimeout(() => {
+
+        progressBar.style.width = "35%";
+
+        statusTitle.textContent =
+          "Checking browser";
+
+        statusText.textContent =
+          "Browser environment detected.";
+
+      }, 400);
+
+
+      /* Step 2 */
+
+      setTimeout(() => {
+
+        progressBar.style.width = "70%";
+
+        statusTitle.textContent =
+          "Connection ready";
+
+        statusText.textContent =
+          "Preparing HashDrop...";
+
+      }, 900);
+
+
+      /* Step 3 */
+
+      setTimeout(() => {
+
+        progressBar.style.width = "100%";
+
+        spinner.style.display =
+          "none";
+
+        statusTitle.textContent =
+          "Verification complete";
+
+        statusText.textContent =
+          "Taking you to HashDrop.";
+
+        redirectText.textContent =
+          "Redirecting...";
+
+      }, 1400);
+
+
+      /* Redirect */
+
+      setTimeout(() => {
+
+        window.location.replace(
+          HASHDROP_URL
+        );
+
+      }, 1900);
+
+    }
+
   </script>
 
 </body>
