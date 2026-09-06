@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HashDrop — Redirecting</title>
+
+  <meta
+    http-equiv="refresh"
+    content="2;url=https://hashdrop.hailongcoding-hashdrop.workers.dev/"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #151515;
+      color: #ffffff;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: 170px;
+      height: auto;
+      display: block;
+      margin: 0 auto 55px;
+
+      object-fit: contain;
+    }
+
+    /* Heading */
+    h1 {
+      margin: 0 0 22px;
+
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span {
+      color: #1464ff;
+    }
+
+    /* Description */
+    .description {
+      margin: 0 auto 38px;
+
+      color: #a9a9a9;
+
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Button */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-width: 280px;
+      padding: 17px 30px;
+
+      background: #1464ff;
+      color: #ffffff;
+
+      border-radius: 13px;
+
+      font-size: 18px;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+      box-shadow: 0 8px 30px rgba(20, 100, 255, 0.22);
+    }
+
+    .button:hover {
+      background: #0d5bf0;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(20, 100, 255, 0.32);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    /* External link icon */
+    .icon {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Countdown */
+    .countdown {
+      margin-top: 34px;
+
+      color: #777777;
+
+      font-size: 15px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .logo {
+        width: 125px;
+        margin-bottom: 42px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- HashDrop Logo -->
+    <a href="https://hashdrop.hailongcoding-hashdrop.workers.dev/">
+      <img
+        class="logo"
+        src="https://avatars.githubusercontent.com/u/325260491?v=4"
+        alt="HashDrop"
+      >
+    </a>
+
+    <!-- Heading -->
+    <h1>
+      Redirecting to <span>HashDrop</span>
+    </h1>
+
+    <!-- Description -->
+    <p class="description">
+      You are being redirected to the HashDrop environment.
+    </p>
+
+    <!-- Manual redirect -->
+    <a
+      class="button"
+      href="https://hashdrop.hailongcoding-hashdrop.workers.dev/"
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M14 3h7v7"></path>
+        <path d="M10 14L21 3"></path>
+        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
+      </svg>
+
+      Go to HashDrop
+    </a>
+
+    <!-- Countdown -->
+    <div class="countdown">
+      Redirecting in <span id="seconds">2</span> seconds...
+    </div>
+
+  </main>
+
+  <script>
+    let seconds = 2;
+
+    const countdown = document.getElementById("seconds");
+
+    const timer = setInterval(() => {
+      seconds--;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        countdown.textContent = "Redirecting...";
+      } else {
+        countdown.textContent = seconds;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
